@@ -1,16 +1,16 @@
 <section class="admin-products-new">
 
   <header class="page-header">
-    <h1>Admin &raquo; New Product</h1>
+    <h1>Admin &raquo; New Category</h1>
   </header>
 
   <div class="well">
-    <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
+    <%= link_to 'All Categories', [:admin, :category], class: 'btn btn-info' %>
   </div>
 
   <div class="row">
     <div class="col-sm-6 col-sm-offset-1">
-      <%= form_for [:admin, @product] do |form| %>
+      <%= form_for [:admin, @category] do |form| %>
 
         <% if form.object.errors.any? %>
           <div class="alert alert-danger">
@@ -55,7 +55,7 @@
           <%= form.file_field :image %>
         </div>
 
-        <%= form.submit 'Create Product', class: 'btn btn-primary' %>
+        <%= form.submit 'Create Category', class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
