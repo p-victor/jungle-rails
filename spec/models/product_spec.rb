@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Product, type: :model do
   describe 'Validations' do
     # validation tests/examples here
-    it 'should have all the fields' do
+    it 'should have a name' do
       @category = Category.new({:name => 'cname'})
       @product = Product.new({:name  => nil, :price => 5, :quantity => 5, :category => @category })
 
@@ -11,7 +11,7 @@ RSpec.describe Product, type: :model do
       
       expect(@product.name).to be_present
     end
-    it 'should have all the fields' do
+    it 'should have a price' do
       @category = Category.new({:name => 'cname'})
       @product = Product.new({:name  => 'pname', :price => nil, :quantity => 5, :category => @category })
 
@@ -19,7 +19,7 @@ RSpec.describe Product, type: :model do
       
       expect(@product.price).to be_present
     end
-    it 'should have all the fields' do
+    it 'should have a quantity' do
       @category = Category.new({:name => 'cname'})
       @product = Product.new({:name  => 'pname', :price => 5, :quantity => nil, :category => @category })
 
@@ -27,7 +27,7 @@ RSpec.describe Product, type: :model do
       
       expect(@product.quantity).to be_present
     end
-    it 'should have all the fields' do
+    it 'should have a category' do
       @product = Product.new({:name  => 'pname', :price => 5, :quantity => 5, :category => nil })
 
       @product.save!
